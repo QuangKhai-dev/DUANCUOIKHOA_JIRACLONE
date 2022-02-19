@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 
 //middleware saga
 import createMiddlewareSaga from 'redux-saga';
+import { UserReducer } from "./../Redux/reducers/UserReducer";
 
 
 
@@ -10,6 +11,7 @@ const middleWareSaga = createMiddlewareSaga();
 
 const rootReducer = combineReducers({
     // nơi đặt reducer
+    UserReducer,
 
 })
 
