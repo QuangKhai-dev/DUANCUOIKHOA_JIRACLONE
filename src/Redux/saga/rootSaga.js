@@ -1,5 +1,7 @@
 import { all } from "redux-saga/effects";
 import * as UserSaga from './Function/UserSaga'
+import * as ProjectSaga from './Function/ProjectSaga'
+import * as ProjectCategory from './Function/ProjectCategorySaga'
 
 export function* rootSaga() {
     // trả về các kết quả theo số lần dispatch
@@ -11,5 +13,11 @@ export function* rootSaga() {
         UserSaga.theoDoiUserSignin(),
         UserSaga.theoDoiSignUp(),
         UserSaga.theoDoiLogOut(),
+        //ProjectSaga
+        ProjectSaga.theoDoiGetAllProject(),
+        ProjectSaga.theoDoiCreateProject(),
+
+        //ProjectCategory
+        ProjectCategory.theoDoiGetProjectCategory(),
     ])
 }
