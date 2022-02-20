@@ -1,4 +1,4 @@
-import { all, call } from "redux-saga/effects";
+import { all } from "redux-saga/effects";
 import * as UserSaga from './Function/UserSaga'
 
 export function* rootSaga() {
@@ -10,5 +10,6 @@ export function* rootSaga() {
         //UserSaga
         UserSaga.theoDoiUserSignin(),
         UserSaga.theoDoiSignUp(),
+        UserSaga.theoDoiLogOut(),
     ])
 }
