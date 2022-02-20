@@ -19,7 +19,7 @@ export default function HomeIndex(props) {
     return (
         <>
             <Space direction="vertical" className={styles.tableUser}>
-                <Title level={4} style={{ color: '#172B4D', marginLeft: '7px' }}>Kanban board</Title>
+                <Title level={4} style={{ color: '#172B4D' }}>Kanban board</Title>
                 <Space className='d-flex justify-content-between' style={{ marginLeft: '7px', marginBottom: '10px' }}>
                 </Space>
                 <Space className='d-flex align-items-center' style={{ marginLeft: '9px' }}>
