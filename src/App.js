@@ -9,6 +9,7 @@ import { HomeTemplate } from './Templates/HomeTemplate/HomeTemplate';
 //Template
 import HomeIndex from './Pages/Home/HomeIndex'
 import CreateProject from './Components/CreateProject/CreateProject';
+import ProjectManagement from './Components/ProjectManagement/ProjectManagement';
 import Login from './Pages/User/Login/Login'
 import Resignter from './Pages/User/Resignter/Resignter'
 
@@ -18,6 +19,7 @@ function App() {
       <Switch>
         <HomeTemplate exact path="/" Component={HomeIndex} />
         <HomeTemplate exact path="/createProject" Component={CreateProject} />
+        <HomeTemplate exact path="/projectmanagement" Component={ProjectManagement} />
         <UserTemplate exact path="/login" Component={Login} />
         <UserTemplate exact path="/resignter" Component={Resignter} />
       </Switch>

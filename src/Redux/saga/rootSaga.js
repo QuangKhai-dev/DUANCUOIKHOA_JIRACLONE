@@ -13,9 +13,13 @@ export function* rootSaga() {
         UserSaga.theoDoiUserSignin(),
         UserSaga.theoDoiSignUp(),
         UserSaga.theoDoiLogOut(),
+        UserSaga.theoDoiGetUser(),
         //ProjectSaga
         ProjectSaga.theoDoiGetAllProject(),
         ProjectSaga.theoDoiCreateProject(),
+        ProjectSaga.theoDoiAddMember(),
+        ProjectSaga.theoDoiDeleteProject(),
+        ProjectSaga.theoDoiRemoveUserFromProject(),
 
         //ProjectCategory
         ProjectCategory.theoDoiGetProjectCategory(),

@@ -157,16 +157,6 @@ export const HomeTemplate = (props) => {
                                 <Text strong>Kanban Board</Text>
                             </Space>
                         </NavLink>
-                        <NavLink to="/project"
-                            style={{ color: '#172B4D' }}
-                            onClick={() => { setState({ active: 1, breadcrumb: 'Project Setting' }) }}
-                            className={state.active === 1 ? `${styles.function_active}` : `${styles.function_item}`}
-                        >
-                            <SettingOutlined style={{ marginRight: '15px' }} />
-                            <Space >
-                                <Text strong>Project Setting</Text>
-                            </Space>
-                        </NavLink>
                         <NavLink to="/projectmanagement"
                             style={{ color: '#172B4D' }}
                             onClick={() => { setState({ active: 2, breadcrumb: 'Project Manage' }) }}
@@ -175,6 +165,16 @@ export const HomeTemplate = (props) => {
                             <SettingOutlined style={{ marginRight: '15px' }} />
                             <Space >
                                 <Text strong>Project Manage</Text>
+                            </Space>
+                        </NavLink>
+                        <NavLink to="/project"
+                            style={{ color: '#172B4D' }}
+                            onClick={() => { setState({ active: 1, breadcrumb: 'Project Setting' }) }}
+                            className={state.active === 1 ? `${styles.function_active}` : `${styles.function_item}`}
+                        >
+                            <SettingOutlined style={{ marginRight: '15px' }} />
+                            <Space >
+                                <Text strong>Project Setting</Text>
                             </Space>
                         </NavLink>
                         <NavLink to="/createProject"
