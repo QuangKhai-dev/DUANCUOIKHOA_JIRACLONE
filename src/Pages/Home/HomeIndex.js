@@ -3,18 +3,18 @@ import Search from 'antd/lib/input/Search'
 import React, { useEffect } from 'react'
 // import BoardJira from '../../Components/JiraBoard/JiraBoard'
 import styles from './HomeIndex.module.css'
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const { Title } = Typography;
 
 export default function HomeIndex(props) {
 
-    // const { userLogin } = useSelector(state => state.UserReducer)
-    // const { arrProjectDetail } = useSelector(state => state.ProjectReducer)
-    // console.log(arrProjectDetail);
-    // useEffect(() => {
-    //     props.setProjectId(props.match.params.id)
-    // }, [props.match.params.id]);
+    const { userLogin } = useSelector(state => state.UserReducer)
+    const { arrProjectDetail } = useSelector(state => state.ProjectReducer)
+    console.log(arrProjectDetail);
+    useEffect(() => {
+        props.setProjectId(props.match.params.id)
+    }, [props.match.params.id]);
 
     return (
         <>
