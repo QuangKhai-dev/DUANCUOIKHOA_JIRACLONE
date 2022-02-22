@@ -2,10 +2,13 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 
 //middleware saga
 import createMiddlewareSaga from 'redux-saga';
-import { UserReducer } from "./reducers/UserReducer";
+import { CommentReducer } from "./reducers/CommentReducer";
+import { PriorityReducer } from "./reducers/PriorityReducer";
+import { ProjectCategoryReducer } from "./reducers/ProjectCategoryReducer";
 import { ProjectReducer } from "./reducers/ProjectReducer";
-import ProjectCategoryReducer from "./reducers/ProjectCategoryReducer";
-
+import { StatusReducer } from "./reducers/StatusReducer";
+import { TaskTypeReducer } from "./reducers/TaskTypeReducer";
+import { UserReducer } from "./reducers/UserReducer";
 
 
 import { rootSaga } from './saga/rootSaga';
@@ -16,7 +19,10 @@ const rootReducer = combineReducers({
     UserReducer,
     ProjectReducer,
     ProjectCategoryReducer,
-
+    PriorityReducer,
+    TaskTypeReducer,
+    StatusReducer,
+    CommentReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(middleWareSaga));

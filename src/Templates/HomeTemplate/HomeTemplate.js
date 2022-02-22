@@ -3,8 +3,8 @@ import { Route, NavLink } from 'react-router-dom';
 import { Layout, Breadcrumb, Tooltip, Space, Divider, Popover, Button, Image, Typography } from 'antd';
 import styles from './HomeTemplate.module.css'
 import { SettingOutlined, QuestionCircleFilled, TableOutlined, SmileFilled, LogoutOutlined, UserOutlined } from '@ant-design/icons';
-// import DrawerSearch from '../../Components/HeaderMenuButton/DrawerSearch/DrawerSearch'
-// import ModalCreate from '../../Components/HeaderMenuButton/DrawerCreate/ModalCreate';
+import DrawerSearch from '../../Components/HeaderMenuButton/DrawerSearch/DrawerSearch'
+import ModalCreate from '../../Components/HeaderMenuButton/DrawerCreate/ModalCreate';
 import { useDispatch } from 'react-redux';
 import { THEO_DOI_LOGOUT } from '../../Redux/types/UserTypes';
 const { Header, Content, Sider } = Layout;
@@ -42,7 +42,7 @@ export const HomeTemplate = (props) => {
     );
     const contentLogout = (
         <Space direction="vertical" align='start'>
-            <NavLink className={styles.itemLogin} to='/taiKhoan'>
+            <NavLink className={styles.itemLogin} to='/taiKhoan' onClick={() => { setState({ breadcrumb: 'User Information' }) }}>
                 <UserOutlined style={{ marginRight: '10px' }} />
                 Tài khoản
             </NavLink>
@@ -95,7 +95,6 @@ export const HomeTemplate = (props) => {
             return <Image
                 src={`https://i.pravatar.cc/150?img=${localStorage.getItem('name')}`}
                 style={{ width: '40px', height: '40px' }}
-                preview={false}
                 alt="" />
         } else {
             return <Image style={{ width: '40px', height: '40px' }} preview={false} src='./img/logo.png' alt="" />
@@ -115,12 +114,12 @@ export const HomeTemplate = (props) => {
                             </Space>
                             <Tooltip placement="right" title={textDrawerSearch}>
                                 <Space className={styles.header_top_item}>
-                                    {/* <DrawerSearch id={state.projectId} /> */}
+                                    <DrawerSearch id={state.projectId} />
                                 </Space>
                             </Tooltip>
                             <Tooltip placement="right" title={textModalCreate}>
                                 <Space className={styles.header_top_item}>
-                                    {/* <ModalCreate /> */}
+                                    <ModalCreate />
                                 </Space>
                             </Tooltip>
                         </Space>

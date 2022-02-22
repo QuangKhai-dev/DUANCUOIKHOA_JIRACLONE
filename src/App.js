@@ -12,16 +12,22 @@ import CreateProject from './Components/CreateProject/CreateProject';
 import ProjectManagement from './Components/ProjectManagement/ProjectManagement';
 import Login from './Pages/User/Login/Login'
 import Resignter from './Pages/User/Resignter/Resignter'
+import UserInfomation from './Components/UserInfomation/UserInfomation';
+import ProjectSetting from './Components/ProjectSetting/ProjectSetting';
 
 function App() {
   return (
     <>
       <Switch>
-        <HomeTemplate exact path="/" Component={HomeIndex} />
-        <HomeTemplate exact path="/createProject" Component={CreateProject} />
-        <HomeTemplate exact path="/projectmanagement" Component={ProjectManagement} />
         <UserTemplate exact path="/login" Component={Login} />
+        <HomeTemplate exact path="/taiKhoan" Component={UserInfomation} />
         <UserTemplate exact path="/resignter" Component={Resignter} />
+        <HomeTemplate exact path="/" Component={HomeIndex} />
+        <HomeTemplate exact path="/homeindex" Component={HomeIndex} />
+        <HomeTemplate exact path="/homeindex/:id" Component={HomeIndex} />
+        <HomeTemplate exact path="/project" Component={ProjectSetting} />
+        <HomeTemplate exact path="/projectmanagement" Component={ProjectManagement} />
+        <HomeTemplate exact path="/createProject" Component={CreateProject} />
       </Switch>
     </>
   );

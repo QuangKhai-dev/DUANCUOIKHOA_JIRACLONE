@@ -30,7 +30,6 @@ export default function Resignter(props) {
             phoneNumber: Yup.string().matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/, "Số điện thoại không phù hợp").required('Không bỏ trống số điện thoại'),
         }),
         onSubmit: values => {
-            console.log(values);
             dispatch({
                 type: THEO_DOI_SIGNUP_API,
                 signUpInfo: values
@@ -57,7 +56,7 @@ export default function Resignter(props) {
                         prefix={<MailOutlined />}
                     />
                     {formik.touched.email && formik.errors.email ? (
-                        <Space style={{ display: 'block', color: 'red' }}>{formik.errors.email}</Space>
+                        <Space style={{ display: 'block', color: 'red', marginTop: '5px' }}>{formik.errors.email}</Space>
                     ) : null}
                 </Form.Item>
                 <Form.Item >
@@ -71,7 +70,7 @@ export default function Resignter(props) {
                         prefix={<UserOutlined />}
                     />
                     {formik.touched.Name && formik.errors.Name ? (
-                        <Space style={{ display: 'block', color: 'red' }}>{formik.errors.Name}</Space>
+                        <Space style={{ display: 'block', color: 'red', marginTop: '5px' }}>{formik.errors.Name}</Space>
                     ) : null}
                 </Form.Item>
                 <Form.Item >
@@ -85,7 +84,7 @@ export default function Resignter(props) {
                         prefix={<PhoneOutlined />}
                     />
                     {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                        <Space style={{ display: 'block', color: 'red' }}>{formik.errors.phoneNumber}</Space>
+                        <Space style={{ display: 'block', color: 'red', marginTop: '5px' }}>{formik.errors.phoneNumber}</Space>
                     ) : null}
                 </Form.Item>
                 <Form.Item >
@@ -99,7 +98,7 @@ export default function Resignter(props) {
                         prefix={<LockOutlined />}
                     />
                     {formik.touched.passWord && formik.errors.passWord ? (
-                        <Space style={{ display: 'block', color: 'red' }}>{formik.errors.passWord}</Space>
+                        <Space style={{ display: 'block', color: 'red', marginTop: '5px' }}>{formik.errors.passWord}</Space>
                     ) : null}
                 </Form.Item>
                 <Form.Item className={styles.signButton}>

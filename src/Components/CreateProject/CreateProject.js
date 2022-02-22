@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useCallback } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Form, Input, Select, Button, Typography, notification, Space } from 'antd';
 import { Editor } from '@tinymce/tinymce-react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { THEO_DOI_CREATE_PROJECT_API, THEO_DOI_GET_PROJECTCATEGORY_API } from '../../Redux/types/UserTypes';
 import styles from './CreateProject.module.css'
 import { history } from './../../Libs/history'
@@ -26,7 +25,7 @@ export default function CreateProjectModal(props) {
             description: Yup.string().required('Không bỏ trống mô tả')
         }),
         onSubmit: values => {
-            // formik.resetForm()
+            formik.resetForm()
             dispatch({
                 type: THEO_DOI_CREATE_PROJECT_API,
                 model: values,
@@ -35,7 +34,6 @@ export default function CreateProjectModal(props) {
         },
     });
     const { messageNoti } = useSelector(state => state.ProjectReducer)
-
     const openNotificationWithIcon = (type, description) => {
         notification[type]({
             message: 'Thông báo',
@@ -46,7 +44,7 @@ export default function CreateProjectModal(props) {
         dispatch({
             type: THEO_DOI_GET_PROJECTCATEGORY_API
         })
-        if (messageNoti.statusCode == 200) {
+        if (messageNoti.statusCode == 200 && messageNoti.location === 'createProject') {
             openNotificationWithIcon('success', 'Khởi tạo project thành công, bạn sẽ được chuyển hướng đến Project Management.')
             setTimeout(() => {
                 history.push('/projectManagement')
@@ -54,8 +52,11 @@ export default function CreateProjectModal(props) {
             dispatch({
                 type: 'CLEAR_MESSAGE',
             })
-        } else if (messageNoti.statusCode == 500) {
+        } else if (messageNoti.statusCode == 500 && messageNoti.location === 'createProject') {
             openNotificationWithIcon('warning', 'Khởi tạo thất bại, tên Project đã có người đặt.')
+            dispatch({
+                type: 'CLEAR_MESSAGE',
+            })
         }
     }, [messageNoti])
 
