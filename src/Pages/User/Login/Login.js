@@ -1,24 +1,45 @@
-import React from 'react'
-import { Input, Button, Typography, Space, Form, Divider, Alert } from 'antd';
+import React, { useEffect } from 'react'
+import { Input, Button, Typography, Space, Form, Divider, notification } from 'antd';
 import { LockOutlined, MailOutlined } from '@ant-design/icons';
 import styles from './Login.module.css'
 import { useFormik } from 'formik';
-import { useDispatch } from 'react-redux';
-// import { THEO_DOI_SIGN_IN_API } from '../../../Redux/types/UserTypes';
+import { useDispatch, useSelector } from 'react-redux';
+import { THEO_DOI_SIGN_IN_API } from '../../../Redux/types/UserTypes';
 import { NavLink } from 'react-router-dom';
 import * as Yup from 'yup';
 import LoginFb from '../LoginFb/LoginFb';
-import { THEO_DOI_SIGN_IN_API } from '../../../Redux/types/UserTypes';
-// import LoginFb from '../LoginFb/LoginFb';
+import { history } from '../../../Libs/history';
 
 const { Title } = Typography;
 
 export default function Login(props) {
     const dispatch = useDispatch()
+    const { messageNoti } = useSelector(state => state.ProjectReducer)
+    const openNotificationWithIcon = (type, description) => {
+        notification[type]({
+            message: 'Thông báo',
+            description: description,
+        })
+    }
+    useEffect(() => {
+        if (messageNoti.statusCode == 200 && messageNoti.location === 'login') {
+            openNotificationWithIcon('success', 'Đăng nhập thành công, bạn sẽ được chuyển hướng đến Trang chủ.')
+            setTimeout(() => {
+                history.push('/')
+            }, 2500)
+            dispatch({
+                type: 'CLEAR_MESSAGE',
+            })
+        } else if (messageNoti.statusCode !== 200 && messageNoti.location === 'login') {
+            openNotificationWithIcon('warning', 'Đăng nhập thất bại, vui lòng kiểm tra lại tài khoản và mật khẩu.')
+            dispatch({
+                type: 'CLEAR_MESSAGE',
+            })
+        }
 
-    // const responseFacebook = (response) => {
-    //     console.log(response);
-    // }
+    }, [messageNoti])
+
+
 
     //Validate Login
     const formik = useFormik({
@@ -53,13 +74,13 @@ export default function Login(props) {
                 <Form.Item >
                     <Input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" size="large" name='email' placeholder="Email" prefix={<MailOutlined />} />
                     {formik.touched.email && formik.errors.email ? (
-                        <Space style={{ display: 'block', color: 'red' }} >{formik.errors.email}</Space >
+                        <Space style={{ display: 'block', color: 'red', marginTop: '5px' }} >{formik.errors.email}</Space >
                     ) : null}
                 </Form.Item>
                 <Form.Item >
                     <Input onChange={formik.handleChange} onBlur={formik.handleBlur} type="password" name='passWord' size="large" placeholder="Password" prefix={<LockOutlined />} />
                     {formik.touched.passWord && formik.errors.passWord ? (
-                        <Space style={{ display: 'block', color: 'red' }} >{formik.errors.passWord}</Space>
+                        <Space style={{ display: 'block', color: 'red', marginTop: '5px' }} >{formik.errors.passWord}</Space>
                     ) : null}
                 </Form.Item>
                 <Form.Item className={styles.signButton}>

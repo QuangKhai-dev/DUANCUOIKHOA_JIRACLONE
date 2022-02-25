@@ -1,0 +1,17 @@
+.formItem:hover {
+    background-color: #ebecf0;
+}
+.formItem div:hover{
+    background-color: #ebecf0 !important;
+    cursor: pointer; 
+}
+.formItem div:focus{
+    background-color: white !important;
+}
+.formItem input:focus{
+    background-color: white !important;
+}
+
+.formItem:focus {
+    background-color: white !important;
+}
