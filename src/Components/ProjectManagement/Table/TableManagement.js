@@ -35,6 +35,7 @@ export default function TableManagement() {
                     title: 'ID',
                     dataIndex: 'userId',
                     key: 'userId',
+                    sorter: (a, b) => a.userId - b.userId,
                 },
                 {
                     title: 'Action',
@@ -131,7 +132,6 @@ export default function TableManagement() {
                 title: 'Members',
                 key: 'members',
                 render: (text, record, index) => {
-                    // console.log(record.members.)
                     return (<Space style={{ display: 'flex', alignItems: 'center' }}>
                         <Popover placement='left' content={renderMembers(record.members, record.id)} title="Member Project" trigger="hover">
                             <Button type='link' style={{ paddingTop: 0 }}>

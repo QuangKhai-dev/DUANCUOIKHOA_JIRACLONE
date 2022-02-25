@@ -18,7 +18,6 @@ export const UserReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'DANG_NHAP': {
             state.userInfo = action.data
-            console.log(state.userInfo)
             return { ...state }
         }
         case 'GET_USER': {
@@ -29,7 +28,6 @@ export const UserReducer = (state = initialState, action) => {
             state.userId = action.userId
             if (localStorage.getItem('name')) {
                 state.messageLogin = action.name
-                console.log(state.messageLogin);
                 return { ...state }
             } else {
                 state.messageLogin = 'Click vào để đăng nhập'

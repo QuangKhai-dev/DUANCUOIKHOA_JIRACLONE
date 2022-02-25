@@ -6,7 +6,8 @@ const initialState = {
     arrProjectDetail: [],
     messageNoti: {
         statusCode: '',
-        projectId: ''
+        projectId: '',
+        location: ''
     }
 }
 
@@ -18,16 +19,17 @@ export const ProjectReducer = (state = initialState, action) => {
             return { ...state }
         }
         case 'NOTIFICATION_SUCCESS': {
-            // console.log(action.data);
             state.messageNoti = {
                 statusCode: action.data.statusCode,
-                projectId: action.data.content.projectId
+                projectId: action.data.content.projectId,
+                location: action.location
             }
             return { ...state }
         }
         case 'NOTIFICATION_FAIL': {
             state.messageNoti = {
                 statusCode: action.data.statusCode,
+                location: action.location,
             }
             return { ...state }
         }

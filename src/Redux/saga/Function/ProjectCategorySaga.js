@@ -4,10 +4,8 @@ import { THEO_DOI_GET_PROJECTCATEGORY_API } from "../../types/UserTypes"
 
 
 function* getProjectCategory(action) {
-    // console.log(action)
     try {
         const { data, status } = yield call(() => { return projectCategoryServices.getAllProjectCategory() })
-        // console.log(data)
         yield put({
             type: 'GET_ALL_PROJECTCATEGORY',
             data: data.content

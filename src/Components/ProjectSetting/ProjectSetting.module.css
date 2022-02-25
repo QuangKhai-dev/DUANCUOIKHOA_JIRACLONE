@@ -1,0 +1,33 @@
+/* input */
+.tableIndex {
+    padding: 10px 20px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+.formItem:hover {
+    background-color: #ebecf0;
+    outline: none;
+    border: 1px solid #ddd;
+
+}
+.formItem:focus {
+    background-color: white;
+    border: 1px solid #4c9aff;
+    outline: none;
+    box-shadow: 0 0 0 1px #4c9aff;
+}
+
+.formItem div:hover{
+    background-color: #ebecf0 !important;
+    border: 1px solid !important;
+    border-color: #ddd !important;
+}
+.formItem div:focus {
+    background-color: white !important;
+    border: 1px solid #4c9aff !important;
+    outline: none !important;
+    box-shadow: 0 0 0 1px #4c9aff !important;
+}
+
+
