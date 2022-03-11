@@ -4,7 +4,7 @@ import { LockOutlined, MailOutlined } from '@ant-design/icons';
 import styles from './Login.module.css'
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { THEO_DOI_SIGN_IN_API } from '../../../Redux/types/UserTypes';
+import { ERROR_LOGIN, SUCCESS_LOGIN, THEO_DOI_SIGN_IN_API } from '../../../Redux/types/UserTypes';
 import { NavLink } from 'react-router-dom';
 import * as Yup from 'yup';
 import LoginFb from '../LoginFb/LoginFb';
@@ -23,7 +23,7 @@ export default function Login(props) {
     }
     useEffect(() => {
         if (messageNoti.statusCode == 200 && messageNoti.location === 'login') {
-            openNotificationWithIcon('success', 'Đăng nhập thành công, bạn sẽ được chuyển hướng đến Trang chủ.')
+            openNotificationWithIcon('success', SUCCESS_LOGIN)
             setTimeout(() => {
                 history.push('/')
             }, 2500)
@@ -31,7 +31,7 @@ export default function Login(props) {
                 type: 'CLEAR_MESSAGE',
             })
         } else if (messageNoti.statusCode !== 200 && messageNoti.location === 'login') {
-            openNotificationWithIcon('warning', 'Đăng nhập thất bại, vui lòng kiểm tra lại tài khoản và mật khẩu.')
+            openNotificationWithIcon('warning', ERROR_LOGIN)
             dispatch({
                 type: 'CLEAR_MESSAGE',
             })

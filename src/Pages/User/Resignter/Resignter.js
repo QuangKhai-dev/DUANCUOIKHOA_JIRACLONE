@@ -1,20 +1,44 @@
-import { Button, Input, Divider, Space, Form } from "antd";
-import React from "react";
+import { Button, Input, Divider, Space, Form, notification } from "antd";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { UserOutlined, LockOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import styles from './Resignter.module.css'
 import { Typography } from 'antd';
 import { useFormik } from 'formik';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { THEO_DOI_SIGNUP_API } from "../../../Redux/types/UserTypes";
 import * as Yup from 'yup';
-import { THEO_DOI_SIGNUP_API } from "../../../Redux/types/UserTypes";
-
+import { ERROR_RESIGNTER, SUCCESS_RESIGNTER, THEO_DOI_SIGNUP_API } from "../../../Redux/types/UserTypes";
+import { history } from './../../../Libs/history'
 
 const { Title } = Typography;
 
 export default function Resignter(props) {
     const dispatch = useDispatch()
+    const { messageNoti } = useSelector(state => state.ProjectReducer)
+    const openNotificationWithIcon = (type, description) => {
+        notification[type]({
+            message: 'Thông báo',
+            description: description,
+        })
+    }
+    useEffect(() => {
+        if (messageNoti.statusCode == 200 && messageNoti.location === 'resignter') {
+            openNotificationWithIcon('success', SUCCESS_RESIGNTER)
+            setTimeout(() => {
+                history.push('/login')
+            }, 2500)
+            dispatch({
+                type: 'CLEAR_MESSAGE',
+            })
+        } else if (messageNoti.statusCode !== 200 && messageNoti.location === 'resignter') {
+            openNotificationWithIcon('warning', ERROR_RESIGNTER)
+            dispatch({
+                type: 'CLEAR_MESSAGE',
+            })
+        }
+
+    }, [messageNoti])
     //Validate Login
     const formik = useFormik({
         initialValues: {

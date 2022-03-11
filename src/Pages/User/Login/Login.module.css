@@ -1,43 +1,43 @@
 .loginPage {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px;
-    width: 600px;
-    height: 450px;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    background-color: white;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px;
+  width: 600px;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
 }
 .formLogin {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .signButton {
-    width: 100%;
+  width: 100%;
 }
 
 .buttonSocial {
-    font-size: 30px;
-    padding: 10px;
-    border-radius: 50px;
-    margin: 10px;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 50px;
+  margin: 10px;
 }
 
 @media screen and (max-width: 768px) {
-    .loginPage{
-        padding-top:40px;
-        width: 500px;
-        height: 400px;
-    }
+  .loginPage {
+    padding-top: 40px;
+    width: 500px;
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .loginPage{
-        padding-top:40px;
-        width: 350px;
-        height: 400px;
-    }
+  .loginPage {
+    padding-top: 40px;
+    width: 300px;
+    height: 400px;
+  }
 }

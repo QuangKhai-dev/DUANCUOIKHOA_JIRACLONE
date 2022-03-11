@@ -1,0 +1,9 @@
+.reponsiveTable {
+  height: 100%;
+}
+@media screen and (max-width: 992px) {
+  .reponsiveTable {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+}

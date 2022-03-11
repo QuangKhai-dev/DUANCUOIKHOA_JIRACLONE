@@ -21,13 +21,16 @@ export default function ModalJiraBoard(props) {
 
     const formik = useFormik({
         initialValues: {
-            contentComment: '',
+            contentComment: "haylam",
         },
         onSubmit: values => {
+            // console.log(values)
             dispatch({
                 type: THEO_DOI_CREATE_COMMENT_API,
-                taskId: props.task.taskId,
-                contentComment: values.contentComment
+                data: {
+                    taskId: props.task.taskId,
+                    contentComment: values.contentComment
+                }
             })
         },
     });

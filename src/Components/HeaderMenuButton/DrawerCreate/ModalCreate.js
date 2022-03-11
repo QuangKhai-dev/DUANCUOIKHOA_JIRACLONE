@@ -34,7 +34,7 @@ export default function ModalCreate(props) {
         })
         if (messageNoti.statusCode == 200 && messageNoti.location === 'createTask') {
             openNotificationWithIcon('success', 'Khởi tạo Task thành công,đang chuyển hướng bạn đến Kanban Board')
-            console.log(messageNoti.projectId);
+            // console.log(messageNoti.projectId);
             setTimeout(() => {
                 history.push(`/homeindex/${messageNoti.projectId}`)
                 dispatch({

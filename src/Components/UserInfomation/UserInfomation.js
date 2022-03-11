@@ -28,7 +28,7 @@ export default function UserInfomationModal() {
             passWord: Yup.string().min(6, 'Mật khẩu từ 6 ký tự trở lên').max(12, 'Mật khẩu không quá 12 ký tự').required('Không bỏ trống mật khẩu')
         }),
         onSubmit: values => {
-            console.log(values)
+            // console.log(values)
             dispatch({
                 type: THEO_DOI_EDITUSER,
                 model: values,

@@ -106,7 +106,7 @@ export const HomeTemplate = (props) => {
     return <Route {...restParam} render={(propsRoute) => {
         return <>
             <Layout >
-                <Sider width={59}>
+                <Sider className={styles.slider_1} width={59}>
                     <Space className={styles.menuButton}>
                         <Space className={styles.header_top}>
                             <Space className='logo mb-2'>
@@ -137,7 +137,7 @@ export const HomeTemplate = (props) => {
                         </Space>
                     </Space>
                 </Sider>
-                <Sider width={220} >
+                <Sider className={styles.slider_2} width={220} >
                     <Space direction="vertical" className={styles.menuItem}>
                         <Space className={styles.project_title}>
                             {renderLoginLogo()}
@@ -189,7 +189,7 @@ export const HomeTemplate = (props) => {
                         <Divider />
                     </Space>
                 </Sider>
-                <Layout >
+                <Layout className={styles.reponsiveMobile} >
                     <Header className={styles.headerTable}>
                         <Breadcrumb style={{ marginTop: '20px', color: 'rgb(94, 108, 132)' }}>
                             <Breadcrumb.Item>Project</Breadcrumb.Item>

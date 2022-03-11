@@ -24,7 +24,9 @@ export default function ProjectSettingTable(props) {
                         </Select>
                     </Form.Item>
                     <Form.Item style={{ width: '40%' }} name={['user', 'introduction']} label="Introduction">
-                        <Input.TextArea className={styles.formItem} />
+                        <Input.TextArea
+                            className={styles.formItem}
+                        />
                     </Form.Item>
                     <Form.Item >
                         <Button type='primary'>

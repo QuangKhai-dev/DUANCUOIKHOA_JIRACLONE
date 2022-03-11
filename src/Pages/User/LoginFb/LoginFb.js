@@ -8,10 +8,10 @@ export default function LoginFb() {
     const [state, setState] = useState({ isLoggedIn: false, userId: '', name: '', email: '', picture: '' });
 
     const responseFacebook = (response) => {
-        console.log(response);
+        // console.log(response);
     }
     const componentClicked = () => {
-        console.log('click');
+        // console.log('click');
     }
     let fbContent = null
     fbContent = <FacebookLogin

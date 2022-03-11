@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { THEO_DOI_ADD_MEMBER_API, THEO_DOI_DELETE_PROJECT_API, THEO_DOI_GET_ALLPROJECT_API, THEO_DOI_GET_USER_API, THEO_DOI_REMOVE_USER_FROMPROJECT_API } from '../../../Redux/types/UserTypes';
+import styles from './TableManagement.module.css'
 import { DeleteOutlined, EditOutlined, PlusOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 import { Button, Space, Tag, Popconfirm, message, AutoComplete, Avatar, Popover, Table } from 'antd';
@@ -131,6 +132,7 @@ export default function TableManagement() {
             {
                 title: 'Members',
                 key: 'members',
+                width: 200,
                 render: (text, record, index) => {
                     return (<Space style={{ display: 'flex', alignItems: 'center' }}>
                         <Popover placement='left' content={renderMembers(record.members, record.id)} title="Member Project" trigger="hover">
@@ -225,9 +227,9 @@ export default function TableManagement() {
             },
         ];
         return <Table
+            className={styles.reponsiveTable}
             pagination={{ defaultPageSize: 9 }}
             size='middle'
-            style={{ height: '100%' }}
             columns={columns}
             dataSource={arrAllProject}
             onChange={handleChange}

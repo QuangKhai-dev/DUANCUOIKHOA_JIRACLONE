@@ -1,6 +1,6 @@
 import { Button, Space, Typography, Avatar, } from 'antd'
 import Search from 'antd/lib/input/Search'
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import BoardJira from '../../Components/JiraBoard/JiraBoard'
 import styles from './HomeIndex.module.css'
 import { useSelector } from 'react-redux'
@@ -22,7 +22,7 @@ export default function HomeIndex(props) {
                 <Space className='d-flex align-items-center' >
                     <Search placeholder="Input search text" style={{ width: 150 }} />
                     <Space className='ml-2'>
-                        <Button type="primary" className={styles.buttonSearch} type="text">Only My Issues</Button>
+                        <Button className={styles.buttonSearch} type="text">Only My Issues</Button>
                         <Button type="primary" className={styles.buttonSearch} >Ignore Resolved</Button>
                     </Space>
                 </Space>
@@ -38,3 +38,4 @@ export default function HomeIndex(props) {
         </>
     )
 }
+

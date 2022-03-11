@@ -53,11 +53,20 @@ export function* theoDoiGetUser() {
 function* signUp(action) {
     try {
         const { data, status } = yield call(() => { return userServices.signUp(action.signUpInfo) })
-        history.push('/login')
-
+        yield put({
+            type: 'NOTIFICATION_SUCCESS',
+            data: data,
+            location: 'resignter'
+        })
     } catch (err) {
         console.log(err.response.data)
+        yield put({
+            type: 'NOTIFICATION_SUCCESS',
+            data: err.response.data,
+            location: 'resignter'
+        })
     }
+
 }
 export function* theoDoiSignUp() {
     yield takeLatest(THEO_DOI_SIGNUP_API, signUp)
@@ -71,10 +80,10 @@ export function* theoDoiLogOut() {
 }
 
 function* editUser(action) {
-    console.log(action.model)
+    // console.log(action.model)
     try {
         const { data, status } = yield call(() => { return userServices.editUser(action.model) })
-        console.log(data)
+        // console.log(data)
         //Lưu token vào local storage
         yield put({
             type: 'NOTIFICATION_SUCCESS',

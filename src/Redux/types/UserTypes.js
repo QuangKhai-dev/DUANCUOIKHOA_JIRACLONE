@@ -21,3 +21,8 @@ export const THEO_DOI_GETALL_COMMENT_API = 'THEO_DOI_GETALL_COMMENT_API'
 export const THEO_DOI_CREATE_COMMENT_API = 'THEO_DOI_CREATE_COMMENT_API'
 export const THEO_DOI_DELETE_COMMENT_API = 'THEO_DOI_DELETE_COMMENT_API'
 export const THEO_DOI_REMOVE_TASK_API = 'THEO_DOI_DELETE_TASK_API'
+
+export const ERROR_RESIGNTER = 'Tạo tài khoản thất bại, vui lòng kiểm tra lại thông tin.'
+export const SUCCESS_RESIGNTER = 'Tạo tài khoản thành công, bạn sẽ được chuyển hướng đến Trang đăng nhập.'
+export const ERROR_LOGIN = 'Đăng nhập thất bại, vui lòng kiểm tra lại tài khoản và mật khẩu.'
+export const SUCCESS_LOGIN = 'Đăng nhập thành công, bạn sẽ được chuyển hướng đến Trang chủ.'

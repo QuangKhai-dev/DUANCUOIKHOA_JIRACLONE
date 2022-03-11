@@ -1,17 +1,13 @@
-.tableUser {
-  background-color: white;
-  height: 100%;
-  width: 100%;
-  padding: 10px 20px;
-}
-.buttonSearch {
-  padding: 4px 10px;
+.reponsiveMobile {
+  display: flex;
 }
 @media screen and (max-width: 576px) {
-  .ant-space-item {
+  .reponsiveMobile {
     overflow-y: hidden;
     overflow-x: auto;
   }
+}
+@media screen and (max-width: 992px) {
   .reponsiveMobile {
     overflow-y: hidden;
     overflow-x: auto;

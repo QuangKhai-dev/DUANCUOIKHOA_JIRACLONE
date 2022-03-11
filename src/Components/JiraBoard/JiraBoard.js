@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { THEO_DOI_GET_PROJECTDETAIL_API, THEO_DOI_UPDATE_STATUS_API } from "../../Redux/types/UserTypes";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import { Avatar, Modal, Space } from 'antd';
+import { Avatar, Modal } from 'antd';
+import styles from './JiraBoard.module.css'
 import styled from "styled-components";
 import BUG from './ImgIcon/BUG.png'
 import NEWTASK from './ImgIcon/NEW_TASK.png'
@@ -17,7 +18,8 @@ const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgrey;
   border-radius: 2px;
-  width: 25%;
+  min-width:250px;
+  width: 400px;
   min-height: 600px;
   background-color: rgb(244, 245, 247);
   display: flex;
@@ -199,6 +201,7 @@ export default function BoardJira(props) {
                                                         width={1000}
                                                         footer={null}
                                                         closable={false}
+                                                        onCancel={handleCancel}
                                                     >
                                                         <ModalJiraBoard handleCancel={handleCancel} renderTaskType={renderTaskType} task={task} projectId={id} />
                                                     </Modal>
@@ -215,5 +218,5 @@ export default function BoardJira(props) {
             })}
         </DragDropContext >
     };
-    return <div style={{ width: '100%' }} className="d-flex">{renderColumns()}</div>;
+    return <div style={{ width: '100%' }} className={styles.reponsiveMobile}>{renderColumns()}</div>;
 }

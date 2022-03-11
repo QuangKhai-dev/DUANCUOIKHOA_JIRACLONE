@@ -1,91 +1,103 @@
-
 .menuButton {
-    background-color: #0747a6;
-    padding: 20px 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: #0747a6;
+  padding: 20px 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .headerTable {
-    background-color: white;
-    padding: 0 20px !important;
-    height: 40px;
+  background-color: white;
+  width: 100%;
+  padding: 0 20px !important;
+  height: 40px;
 }
 
 .header_top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .header_top_item {
-    font-size: 20px;
-    border-radius: 50%;
-    margin-bottom: 5px;
-    font-size: 18px;
+  font-size: 20px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 .header_top_item:hover {
-    background-color: #1c63ce;
+  background-color: #1c63ce;
 }
 .header_bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .menuItem {
-    background-color: #F4F5F7;
-    display: flex;
-    padding: 20px 0;
-    height: 100vh;
+  background-color: #f4f5f7;
+  display: flex;
+  padding: 20px 0;
+  height: 100vh;
 }
-.project_title{
-    display: flex;
-    align-items: center;
-    padding-left: 13px;
+.project_title {
+  display: flex;
+  align-items: center;
+  padding-left: 13px;
 }
 
 .function_item {
-    color: #172B4D;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    padding: 8px 10px 8px 15px;
-    margin-bottom: 5px;
-    cursor: pointer;
+  color: #172b4d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px 8px 15px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .function_item:hover {
-    background-color: #e0e1e6;
-    border-radius: 2px;
+  background-color: #e0e1e6;
+  border-radius: 2px;
 }
 .function_active {
-    color: #0052CC;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    padding: 8px 0 8px 15px;
-    margin-bottom: 5px;
-    background-color: #EBECF0;
-    cursor: pointer;
+  color: #0052cc;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 8px 0 8px 15px;
+  margin-bottom: 5px;
+  background-color: #ebecf0;
+  cursor: pointer;
 }
 .function_active span {
-    color: #0052CC;
+  color: #0052cc;
 }
 
 .itemLogin {
-    color: black;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
-button.itemLogin{
-    padding-left: 0;
+button.itemLogin {
+  padding-left: 0;
 }
-button.itemLogin:hover{
-    background-color: none;
-    color: #40a9ff;
+button.itemLogin:hover {
+  background-color: none;
+  color: #40a9ff;
+}
+@media screen and (max-width: 576px) {
+  .slider_1 {
+    display: none;
+  }
+  .slider_2 {
+    display: none;
+  }
+  .reponsiveMobile {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
 }

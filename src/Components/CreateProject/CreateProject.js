@@ -88,8 +88,8 @@ export default function CreateProjectModal(props) {
                         onEditorChange={(value) => { formik.setFieldValue("description", value) }}
                         init={{
                             height: 250,
-                            width: '40%',
                             menubar: false,
+                            width: '40%',
                             plugins: [
                                 'advlist autolink lists link image charmap print preview anchor',
                                 'searchreplace visualblocks code fullscreen',
@@ -109,7 +109,6 @@ export default function CreateProjectModal(props) {
                 <Form.Item >
                     <Title level={5} style={{ color: '#5e6c84', fontSize: '15px' }}>CATEGORYID</Title>
                     <Select
-                        style={{ width: '40%' }}
                         className={styles.formItem}
                         onChange={(value) => { formik.setFieldValue('categoryid', value) }}
                         name="categoryid"

@@ -32,11 +32,7 @@ export default function DrawerSearch(props) {
         });
     };
 
-    const onChange = e => {
-        setState({
-            placement: e.target.value,
-        });
-    };
+
     const { placement, visible } = state;
 
     return (
